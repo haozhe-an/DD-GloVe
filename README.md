@@ -8,7 +8,7 @@ Our work is to appear in Findings of ACL 2022.
 Our trained embeddings are available [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 
 ## Evaluation
-The folder `eval` contains our code to evaluate the qualities of DD-GloVe and GloVe embeddings trained using other debiasing algorithms.
+The folder `embeddings_eval` contains our code to evaluate the qualities of DD-GloVe and GloVe embeddings trained using other debiasing algorithms.
 Please download our trained DD-GloVe embeddings and other baselines [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 Note that the evaluation code performs double hard debias on the fly. Place the word embedding files into the folder `eval` (i.e. the same level as `eval_bias_final.py`.
 
