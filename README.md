@@ -4,6 +4,8 @@ a train-time debiasing algorithm to learn GloVe word embeddings by leveraging **
 
 Our work is to appear in Findings of ACL 2022.
 
+Haozhe An, Xiaojiang Liu, and Jian Zhang. "Learning Bias-reduced Word Embeddings Using Dictionary Definitions." Findings of ACL. 2022.
+
 ## DD-GloVe Word Embeddings
 Our trained embeddings are available [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 
