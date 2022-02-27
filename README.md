@@ -7,6 +7,35 @@ Our work is to appear in Findings of ACL 2022.
 ## DD-GloVe Word Embeddings
 Our trained embeddings are available [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 
+## Training
+### Training corpus
+Training corpus is not provided in this repository. We point out some public training corpus available online.
+
+- wikipedia: https://huggingface.co/datasets/wikipedia
+- text8: `wget https://data.deepai.org/text8.zip`
+
+DD-GloVe and other baselines in this paper were trained on wikipedia corpus.
+
+### Dictionary definitions
+The released embeddings of DD-GloVe were trained using definitions from [Oxford dictionary](https://www.lexico.com/). We also conducted experiments using [WordNet](https://wordnet.princeton.edu/) and found that the dictionary content affect the embeddings qualities minimally.
+
+### Running the code
+`./demo.sh <use_def_loss> <lambda> <use_ortho_loss> <beta> <use_proj_loss> <gamma> <max_itr>`
+
+where `use_def_loss`, `use_ortho_loss`, and `use_proj_loss` are either 1 or 0 to indicate using or not using each component of the loss, `lambda`, `beta`, and `gamma` are the weights for the loss term precedding them, and `max_itr` is the maximum number of iterations for training.
+
+For example,
+`./demo.sh 1 0.005 1 0.01 1 0.005 40` will train DD-GloVe with `use_def_loss=1, alpha(def_loss_weight)=0.01, use_ortho_loss=1, beta(ortho_loss_weight)=0.01, use_proj_loss=1, gamma(proj_loss_weight)=0.005, max_itr=40`.
+
+This command will read the training corpus, produce vocab count, compute co-occurrences, get definitions of all vocab, train the word embeddings, and save them.
+
+**IMPORTANT**
+
+- You will need to modify line 79 and 81 in `./src/glove.c` to compute the correct bias directions given your own training corpus.
+  - Line 79 needs the word indices of two initial seed words: `int BOY = 19, GIRL = 43; // Modify them to your seed words indices in vocab.txt`.
+  - Line 81 defines the greatest word index up to which the words will be considered as candidates words to compute the bias direction: `long long cap = 30000; // This number must be smaller than vocab size`.
+- You will need to modify line 23 in `./demo.sh` to read your training corpus.
+
 ## Evaluation
 The folder `embeddings_eval` contains our code to evaluate the qualities of DD-GloVe and GloVe embeddings trained using other debiasing algorithms.
 Please download our trained DD-GloVe embeddings and other baselines [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
