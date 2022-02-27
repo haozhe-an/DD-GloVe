@@ -32,7 +32,7 @@ This command will read the training corpus, produce vocab count, compute co-occu
 **IMPORTANT**
 
 - You will need to modify line 79 and 81 in `./src/glove.c` to compute the correct bias directions given your own training corpus.
-  - Line 79 needs the word indices of two initial seed words: `int BOY = 19, GIRL = 43; // Modify them to your seed words indices in vocab.txt`.
+  - Line 79 needs the word indices of two initial seed words: `int SEED_WORD_1 = 19, SEED_WORD_2 = 43; // Modify them to your seed words indices in vocab.txt`.
   - Line 81 defines the greatest word index up to which the words will be considered as candidates words to compute the bias direction: `long long cap = 30000; // This number must be smaller than vocab size`.
 - You will need to modify line 23 in `./demo.sh` to read your training corpus.
 
