@@ -9,6 +9,8 @@ Haozhe An, Xiaojiang Liu, and Jian Zhang. "Learning Bias-reduced Word Embeddings
 ## DD-GloVe Word Embeddings
 Our trained embeddings are available [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 
+To load trained word embeddings, you may reference the code [here](https://github.com/haozhe-an/DD-GloVe/blob/aaf9850e20dff6705e26bbf6fd73e0b478f7f1ee/eval/python/evaluate.py#L138).
+
 ## Training
 ### Training corpus
 Training corpus is not provided in this repository. We point out some public training corpus available online.
