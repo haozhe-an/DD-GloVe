@@ -82,7 +82,7 @@ allennlp train coref.jsonnet -s coref_model
 allennlp evaluate coref_model/model.tar.gz test.english.v4_gold_conll --cuda-device 0 --output-file eval_output_base
 ```
 ## Citation
-Haozhe An, Xiaojiang Liu, and Jian Zhang. "Learning Bias-reduced Word Embeddings Using Dictionary Definitions." Findings of ACL. 2022.
+Haozhe An, Xiaojiang Liu, and Donald Zhang. 2022. Learning Bias-reduced Word Embeddings Using Dictionary Definitions. In *Findings of the Association for Computational Linguistics: ACL 2022*, pages 1139–1152, Dublin, Ireland. Association for Computational Linguistics.
 ```
 @inproceedings{an-etal-2022-learning,
     title = "Learning Bias-reduced Word Embeddings Using Dictionary Definitions",
