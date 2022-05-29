@@ -2,10 +2,6 @@
 Repository for the implementation and evaluation of DD-GloVe, 
 a train-time debiasing algorithm to learn GloVe word embeddings by leveraging **d**ictionary **d**efinitions.
 
-Our work is to appear in Findings of ACL 2022.
-
-Haozhe An, Xiaojiang Liu, and Jian Zhang. "Learning Bias-reduced Word Embeddings Using Dictionary Definitions." Findings of ACL. 2022.
-
 ## DD-GloVe Word Embeddings
 Our trained embeddings are available [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 
@@ -83,3 +79,22 @@ For example,
 allennlp train coref.jsonnet -s coref_model
 allennlp evaluate coref_model/model.tar.gz test.english.v4_gold_conll --cuda-device 0 --output-file eval_output_base
 ```
+## Citation
+Haozhe An, Xiaojiang Liu, and Jian Zhang. "Learning Bias-reduced Word Embeddings Using Dictionary Definitions." Findings of ACL. 2022.
+```
+@inproceedings{an-etal-2022-learning,
+    title = "Learning Bias-reduced Word Embeddings Using Dictionary Definitions",
+    author = "An, Haozhe  and
+      Liu, Xiaojiang  and
+      Zhang, Donald",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2022",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.findings-acl.90",
+    pages = "1139--1152",
+    abstract = "Pre-trained word embeddings, such as GloVe, have shown undesirable gender, racial, and religious biases. To address this problem, we propose DD-GloVe, a train-time debiasing algorithm to learn word embeddings by leveraging $\underline{d}$ictionary $\underline{d}$efinitions. We introduce dictionary-guided loss functions that encourage word embeddings to be similar to their relatively neutral dictionary definition representations. Existing debiasing algorithms typically need a pre-compiled list of seed words to represent the bias direction, along which biased information gets removed. Producing this list involves subjective decisions and it might be difficult to obtain for some types of biases. We automate the process of finding seed words: our algorithm starts from a single pair of initial seed words and automatically finds more words whose definitions display similar attributes traits. We demonstrate the effectiveness of our approach with benchmark evaluations and empirical analyses. Our code is available at https://github.com/haozhe-an/DD-GloVe.",
+}
+```
+
