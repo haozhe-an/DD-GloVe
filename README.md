@@ -2,6 +2,8 @@
 Repository for the implementation and evaluation of DD-GloVe, 
 a train-time debiasing algorithm to learn GloVe word embeddings by leveraging **d**ictionary **d**efinitions.
 
+Paper: https://aclanthology.org/2022.findings-acl.90/
+
 ## DD-GloVe Word Embeddings
 Our trained embeddings are available [here](https://drive.google.com/drive/folders/1yqpBcqENLkPrzL1wfkw08GkO6VQ8m2tf?usp=sharing).
 
